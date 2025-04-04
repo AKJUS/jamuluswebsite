@@ -78,7 +78,7 @@ Before joining a meeting, you can select to not use "Computer Audio" by selectin
 
 Now select "Leave Computer Audio":
 
-![Popover of audio settings with Leave Computer Audio button](https://github.com/user-attachments/assets/30394108-819e-4cd8-966b-3f13279d8309)
+![Popover of audio settings with Leave Computer Audio button](https://github.com/user-attachments/assets/c1ade830-3104-48ca-84c6-1e0a92f6ef9f)
 
 ## Advanced setup
 
