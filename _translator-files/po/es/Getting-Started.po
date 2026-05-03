@@ -2,12 +2,14 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Allan Nordhøy <redacted@invalid.local>, 2022.
-# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2022, 2023, 2024.
-# gallegonovato <fran-carro@hotmail.es>, 2023.
+# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2022, 2023, 2024, 2026.
+# gallegonovato <fran-carro@hotmail.es>, 2023, 2024.
+# Allan Nordhøy <epost@anotheragency.no>, 2026.
+# Deleted User <noreply+48943@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-08-05 22:09+0000\n"
+"PO-Revision-Date: 2026-02-04 13:01+0000\n"
 "Last-Translator: ignotus <ignotus666@users.noreply.hosted.weblate.org>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -15,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Yaml Front Matter Hash Value: lang
 #: ../wiki/en/Getting-Started.md:1
@@ -255,8 +257,8 @@ msgstr "Ten en cuenta que puedes utilizar el Chat en cualquier momento para mens
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:88
-msgid "More information about using Jamulus can be found in the [Software Manual](/wiki/Software-Manual)."
-msgstr "Se puede encontrar más información sobre el uso de Jamulus en el [Manual de Software](/wiki/Software-Manual)."
+msgid "More information about using Jamulus can be found in the [User Manual](/wiki/Software-Manual)."
+msgstr "Se puede encontrar más información sobre el uso de Jamulus en el [Manual del Usuario](/wiki/Software-Manual)."
 
 #. type: Title ##
 #: ../wiki/en/Getting-Started.md:89

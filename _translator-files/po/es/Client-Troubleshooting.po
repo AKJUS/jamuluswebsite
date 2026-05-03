@@ -2,20 +2,21 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # ignotus <please@seeGitHubOrWeblate.local>, 2022.
-# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2022, 2023.
-# gallegonovato <fran-carro@hotmail.es>, 2023.
+# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2022, 2023, 2024, 2026.
+# gallegonovato <fran-carro@hotmail.es>, 2023, 2024.
+# Deleted User <noreply+48943@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2023-05-16 09:52+0000\n"
-"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"PO-Revision-Date: 2026-02-04 13:01+0000\n"
+"Last-Translator: ignotus <ignotus666@users.noreply.hosted.weblate.org>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Yaml Front Matter Hash Value: lang
 #: ../wiki/en/Client-Troubleshooting.md:1
@@ -169,8 +170,8 @@ msgstr "Exactamente cómo evitas escuchar tu señal directa dependerá de tu con
 
 #. type: Plain text
 #: ../wiki/en/Client-Troubleshooting.md:50
-msgid "Be aware that while listening to the Server's signal will ensure you will be in sync with other musicians, you may also experience problems if your overall latency (indicated by the \"Delay\" light in Jamulus) is not green or at least yellow most of the time. Consult the [software manual](/wiki/Software-Manual) to understand how to adjust your setup to help with this."
-msgstr "Ten en cuenta que aunque escuches la señal del Servidor y esto asegura que estás en sincronización con los demás músicos, puedes experimentar problemas si tu retardo total (indicado por la luz de \"Retardo\" en Jamulus) no está en verde o al menos en amarillo la mayor parte del tiempo. Consulta el [manual de software](/wiki/Software-Manual) para entender cómo ajustar tu configuración para mejorar este aspecto."
+msgid "Be aware that while listening to the Server's signal will ensure you will be in sync with other musicians, you may also experience problems if your overall latency (indicated by the \"Delay\" light in Jamulus) is not green or at least yellow most of the time. Consult the [User Manual](/wiki/Software-Manual) to understand how to adjust your setup to help with this."
+msgstr "Ten en cuenta que aunque escuches la señal del Servidor y esto asegura que estás en sincronización con los demás músicos, puedes experimentar problemas si tu retardo total (indicado por la luz de \"Retardo\" en Jamulus) no está en verde o al menos en amarillo la mayor parte del tiempo. Consulta el [Manual del Usuario](/wiki/Software-Manual) para entender cómo ajustar tu configuración para mejorar este aspecto."
 
 #. type: Title ###
 #: ../wiki/en/Client-Troubleshooting.md:51
@@ -325,14 +326,14 @@ msgid ""
 "* Go to `Preferences` > `Security & Privacy` > `Privacy` tab\n"
 "* Find `Microphone` on the left and then make sure `Jamulus` is enabled on the right-hand list\n"
 msgstr ""
-"Puede que no hayas respondido \"Sí\" a la pregunta \"Jamulus quiere acceder a tu micrófono\".  Para solucionarlo:\n"
-"* Ve a \"Preferencias\" > \"Seguridad y Privacidad\" > \"Privacidad\".\n"
-"* Busca \"Micrófono\" a la izquierda y asegúrate de que \"Jamulus\" está activado en la lista de la derecha.\n"
+"Puede que no hayas respondido \"Sí\" a la pregunta `\"Jamulus quiere acceder a tu micrófono\"`.  Para solucionarlo:\n"
+"* Ve a `Preferencias` > `Seguridad y Privacidad` > `Privacidad`.\n"
+"* Busca `Micrófono` a la izquierda y asegúrate de que `Jamulus` está activado en la lista de la derecha.\n"
 
 #. type: Plain text
 #: ../wiki/en/Client-Troubleshooting.md:108
-msgid "For anything else, please search or post on the [Discussion Forums](https://github.com/jamulussoftware/jamulus/discussions)"
-msgstr "Para cualquier otra cosa, por favor busca o publica un post en los [Foros de Discusión](https://github.com/jamulussoftware/jamulus/discussions)"
+msgid "For anything else, please search or post on the [Discussion Forums](https://github.com/orgs/jamulussoftware/discussions)"
+msgstr "Para cualquier otra cosa, por favor busca o publica un post en los [Foros de Discusión](https://github.com/orgs/jamulussoftware/discussions)"
 
 #, no-wrap
 #~ msgid ""

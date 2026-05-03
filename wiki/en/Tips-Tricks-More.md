@@ -80,23 +80,104 @@ Here is the script:
  jack_connect Jamulus:'output right' system:playback_2
 ~~~
 
-### Using ctrlmidich for MIDI controllers
+### Using `--ctrlmidich` for MIDI controllers
 
-The volume fader, pan control and mute and solo buttons in the Client's mixer window strips can be controlled using a MIDI controller by using the `--ctrlmidich` parameter (note: only available for use with macOS and Linux using Jamulus version 3.7.0 or higher, and on Windows using the Jamulus version with JACK support). To enable this feature, Jamulus must be launched with `--ctrlmidich`. There is one global MIDI channel parameter (1-16) and two parameters you can set for each item controlled: `offset` and `consecutive CC numbers`. Set the first parameter to the channel you want Jamulus to listen on (0 for all channels) and then specify the items you want to control (f = volume fader; p = pan; m = mute; s = solo; o = mute myself) with the offset (CC number to start from) and number of consecutive CC numbers. There is one exception that does not require establishing consecutive CC numbers which is the "Mute Myself" command - it only requires a single CC number as it is only applied to one's own audio stream. Take the following example:
+MIDI controller parameters can be set using the `--ctrlmidich` command-line option. Bear in mind that when used, specified control parameters will overwrite any values set previously using the GUI. Any controls not set in the command line will be disabled, though their values will be preserved.
 
-`--ctrlmidich "1;f0*8;p16*8;s32*8;m48*8;o64"`
+`--ctrlmidich` takes a single argument. If you omit it, the parameter is ignored. There are two formats for the argument:
 
-Here, Jamulus listens on MIDI channel 1. Volume fader CC numbers start at 0 and there are 8 of them (so end at CC number 7). Pan controls start at CC number 16 and end at 23; Solo 32 to 39 and Mute 48 to 55. Mute Myself is enabled/disabled by CC number 64.
+1. The legacy definition has one or two numbers in the format:
 
-Please note that for the functions controlled by buttons to work properly, your MIDI controller needs the buttons to be set to "toggle" mode. This means that when pressed to 'turn on' a control, it must send a MIDI CC number with a value >=64, and to 'turn off' the control it must send the same CC number with a value <64. You can read your controller's manual to find out how to set this.
+   ```
+   [MIDI channel];[offset for first fader]
+   ```
 
-*Note*: Jamulus does not provide feedback on the on/off state of buttons, meaning that your controller must keep track and toggle LEDs (if any) to 'on' or 'off' itself.
+   * `MIDI channel` is required or else the parameter argument is ignored and the feature is not active. `0` means "any channel", `1`-`16` listen only to MIDI messages on the specified MIDI channel.
 
-Fader strips in the mixer window are controlled in ascending order from left to right. Continuing with the above example, in strip number 1 (farthest left), the volume fader would be controlled by CC number 0; pan by 16; solo by 32 and mute by 48. As we have specified 8 consecutive controllers for each parameter, this would give us MIDI control over 8 strips (volume, pan, solo and mute in each one) in the mixer window. The next strip would be controlled by 1, 17, 33 and 49, and so forth.
+   * `offset for first fader` is the first MIDI CC to use to control a Jamulus Channel fader, with all MIDI CCs after that being used; must be a number or else the long form is used.
 
-Make sure you connect your MIDI device's output port to the Jamulus MIDI in port (QjackCtl (Linux/Windows), MIDI Studio (macOS) or whatever you use for managing connections). In Linux you will need to install and launch a2jmidid so your device shows up in the MIDI tab in Qjackctl.
+     For example
 
-*Tip*: When you enable MIDI control in Jamulus, each user's name is prepended with a number, with the leftmost user starting at 0, then 1, etc. With default settings, when some users leave and others join, their left-right arrangement in the GUI may cease to follow a numerical order, making it more difficult to know who each physical fader/knob on your MIDI controller corresponds to. In order to keep the fader strips following a numerical order, go to "View" on the top menu bar and switch between "No User Sorting" and another option and then back again (e.g. type `Ctrl+N`, `Ctrl+O`).
+     ```
+     --ctrlmidich "0"
+     ```
+
+     would listen on all MIDI channels and use MIDI controller 0 to control Jamulus channel 0 fader and so on.  Here's another example:
+
+     ```
+     --ctrlmidich "2;50"
+     ```
+
+     This would listen on MIDI channel 2 and use MIDI controller 50 to control Jamulus channel 0 fader and so on.
+
+2. The long form is a sequence of offsets and counts for various controllers:
+
+   ```
+   [MIDI channel];[control letter][offset](*[count])(;...)
+   ```
+
+   * `MIDI channel` is required or else the parameter argument is ignored and the feature is not active. `0` means "any channel", `1`-`16` listen only to MIDI messages on the specified MIDI channel.
+
+   * `control letter` defines which Jamulus Control the MIDI controller number is assigned to:
+
+     | control letter | Jamulus Control |
+     |--------:|---------|
+     | `f` | Fader |
+     | `p` | Pan   |
+     | `s` | Solo  |
+     | `m` | Mute  |
+
+   * `offset` is the base MIDI CC number for the control.
+
+   * `count` is the number of CC values for the control, defaulting to 1 (i.e. the number Jamulus channels that can be controlled).
+
+   An example for a Korg nanoKONTROL2 using eight sliders starting at MIDI CC 0 to control faders and eight knobs starting at MIDI CC 16 to control pan, on any MIDI channnel, for eight Jamulus channels would be
+
+   ```
+   --ctrlmidich "0;f0*8;p16*8"
+   ```
+
+   Enhancing this to add eight Solo buttons starting at CC 32, and eight Mute buttons starting at CC 48 would give:
+
+   ```
+   --ctrlmidich "0;f0*8;p16*8;s32*8;m48*8"
+   ```
+
+   * Three additional `control letter` values are available:
+
+     1. `o` controls Mute Myself and has a single `offset` (i.e. `count` is ignored and taken as 1).
+
+     2. `u` enables `MIDI Pick-up Mode` for the fader and pan controls.
+
+     3. `d` is an option to specify a particular MIDI input device by name -- without this, it is up to the user to make connections with a connection manager or by other means, and on Windows non-JACK Jamulus all devices will be assigned to Jamulus; with it, only the specified device will be used. For example:
+
+        ```
+        --ctrlmidich "1;f0*8;dnanoKontrol"
+        ```
+
+        would listen for CC0 through CC7 on MIDI channel 1 from a MIDI device called "nanoKontrol". Remember to wrap the whole of the `--ctrlmidich` argument in double quotes and you will have no problems with device names containing spaces.
+
+        In order to discover the correct device name to use, start Jamulus from the command line with `--ctrlmidich` and observe the output. Jamulus will list all discovered MIDI devices:
+
+        ```
+        C:\Users\Me>"C:\Program Files\Jamulus\Jamulus" --ctrlmidich "0"
+        - MIDI controller settings: 0
+        - allocated port number: 22134
+        - MIDI devices found: 2
+          0: nanoKONTROL2
+          1: Keystation Mini 32
+
+        C:\Users\Me>"C:\Program Files\Jamulus\Jamulus" --ctrlmidich "1;f0*8;p16*8;s32*8;m48*8;dnanoKONTROL2"
+        - MIDI controller settings: 1;f0*8;p16*8;s32*8;m48*8;dnanoKONTROL2
+        - allocated port number: 22134
+        - MIDI devices found: 2
+          0: nanoKONTROL2
+          1: Keystation Mini 32 (ignored)
+        ```
+
+	Note that for Windows non-JACK Jamulus if only one MIDI device is connected, the `d` option is not necessary, as Jamulus will use the device automatically.
+
+	For more information about using MIDI devices with Jamulus, see the [MIDI control](Software-Manual#midi-control) section in the Software Manual.
 
 ## For Server admins
 

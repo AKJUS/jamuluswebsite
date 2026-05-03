@@ -2,22 +2,26 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Allan Nordhøy <redacted@invalid.local>, 2022.
-# gbonaspetti <gbonaspetti@hotmail.com>, 2023.
-# Felipe Nogueira <contato.fnog@gmail.com>, 2023.
+# gbonaspetti <gbonaspetti@hotmail.com>, 2023, 2026.
+# Felipe Nogueira <contato.fnog@gmail.com>, 2023, 2026.
 # HackerSinhos <nunseinada01@proton.me>, 2024.
-# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2024.
+# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2024, 2026.
+# menestrel - mkmb <56491958+menestrel-mkmb@users.noreply.github.com>, 2024, 2026.
+# Dhefferson Victor Dias Costa <vdhefferson10@gmail.com>, 2025, 2026.
+# HackerSinhos <contatohackersao@hotmail.com>, 2026.
+# Melcon Moraes <melcon@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-08-05 21:09+0000\n"
-"Last-Translator: ignotus <ignotus666@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-02-03 21:50+0000\n"
+"Last-Translator: menestrel - mkmb <56491958+menestrel-mkmb@users.noreply.github.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/jamulus/getting-started/pt_BR/>\n"
 "Language: pt-BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Yaml Front Matter Hash Value: lang
 #: ../wiki/en/Getting-Started.md:1
@@ -87,14 +91,7 @@ msgstr "Para que o Jamulus funcione com o seu sistema operacional, siga o guia d
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:28
-#, fuzzy, no-wrap
-#| msgid ""
-#| "<div class=\"fx-row fx-row-start-xs button-container\">\n"
-#| "    <a href=\"Installation-for-Windows\" class=\"button fx-col-100-xs\">Windows</a>\n"
-#| "    <a href=\"Installation-for-Macintosh\" class=\"button fx-col-100-xs\">macOS</a>\n"
-#| "    <a href= \"Installation-for-Linux\" class=\"button fx-col-100-xs\">Linux</a>\n"
-#| "</div>\n"
-#| "_[Android](Installation-for-Android) and [iOS](Installation-for-iOS) can be used too, but are still considered experimental._\n"
+#, no-wrap
 msgid ""
 "<div class=\"fx-row fx-row-start-xs button-container\">\n"
 "    <a href=\"Installation-for-Windows\" class=\"button fx-col-100-xs\">Windows</a>\n"
@@ -108,7 +105,7 @@ msgstr ""
 "    <a href=\"Installation-for-Macintosh\" class=\"button fx-col-100-xs\">macOS</a>\n"
 "    <a href= \"Installation-for-Linux\" class=\"button fx-col-100-xs\">Linux</a>\n"
 "</div>\n"
-"_[Android](Installation-for-Android) e [iOS](Installation-for-iOS) podem ser utilizados também, mas ainda são considerados experimentais._\n"
+"_[Android](Installation-for-Android) e [iOS](Installation-for-iOS) também podem ser utilizados, mas ainda são considerados experimentais._\n"
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:30
@@ -220,23 +217,23 @@ msgstr ""
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:71
 msgid "The most important thing about Servers is their “ping time”. The bigger the number, the harder it will be to play in time with others. Usually, you would select a Server with a ping of less than 50ms if you can."
-msgstr ""
+msgstr "A coisa mais importante entre servidores é seu \"tempo de resposta\". Quanto maior o número, mais difícil será para acompanhar sincronamente com os outros. Idealmente, e se for possível, você deve selecionar um servidor com um tempo de resposta abaixo de 50ms."
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:73
 msgid "Once connected to a Server, make sure you can hear yourself OK and fix any input volume or other problems. You can have a look at the [troubleshooting page](/wiki/Client-Troubleshooting) for common problems. And of course, check that you are also able to obey [The Golden Rule](/wiki/Client-Troubleshooting#you-all-sound-ok-but-its-difficult-to-keep-together)."
-msgstr ""
+msgstr "Uma vez conectado ao servidor, tenha certeza de que todos possam te ouvir e conserte qualquer problema com seu microfone ou outra entrada. Você pode dar uma olhada na [página passo-a-passo](/wiki/Client-Troubleshooting) para os erros comuns. E claro, verifique que você está seguindo a [regra de ouro](wiki/Client-Troubleshooting#you-all-sound-ok-but-its-difficult-to-keep-together)."
 
 #. type: Title ##
 #: ../wiki/en/Getting-Started.md:74
 #, no-wrap
 msgid "Playing for the first time"
-msgstr ""
+msgstr "Tocar pela primeira vez"
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:77
 msgid "With your sound all set up, you are ready to go. When you connect to a Server (you may want to select a genre from the list), the faders you see on the right are your own personal mix. Everything you change here will change what you hear, but won’t affect others. If you move a fader down, that channel will be quieter, if you move it up, the channel will be louder for you."
-msgstr ""
+msgstr "Com o seu som configurado, você está pronto para prosseguir. Quando você se conecta a um Servidor (talvez você queira selecionar um gênero da lista), os moduladores que você vê à direita são seu mix pessoal. Tudo que você modificar aqui mudará o que você vai ouvir, mas não afetará outros. Se você mover o modulador para baixo, o canal ficará mais quieto, se você mover para cima, o canal ficará mais alto para você."
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:82
@@ -247,21 +244,25 @@ msgid ""
 "  <figcaption>The main window when you are connected to a Server</figcaption>\n"
 "</figure>\n"
 msgstr ""
+"<figure>\n"
+"   <img src=\"{% include img/pt-BR-screenshots/main-screen-medium.inc %}\" loading=\"lazy\" alt=\"Screenshot\" style=\"border: 5px solid grey;\"> \n"
+"  <figcaption>Janela principal quando conectado a um Servidor</figcaption>\n"
+" </figure>\n"
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:84
 msgid "If you don’t want others to hear your audio, click on the “Mute Myself” button which will stop your audio from being sent to other people. They won’t be able to tell you have done this though. But if you see a “mute” icon above a fader, that means they can’t hear you because they've muted your channel in their mix."
-msgstr ""
+msgstr "Se você não quiser que outros escutem seu áudio, clique no botão \"Me Silenciar\" que seu áudio vai parar de ser enviado para outras pessoas. Elas não serão capazes de saber que você fez isso. Mas se você ver um ícone \"Silenciar\" acima de um fader, isso significa que eles não conseguem te ouvir porque eles silenciaram seu canal em seus mixers."
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:86
 msgid "Note that you can use the Chat facility at any time to message other people while you are connected. The welcome message in the chat may also state some guidelines for use."
-msgstr ""
+msgstr "Note que você pode usar o Chat facilmente à qualquer hora para mandar mensagens para outras pessoas enquanto você estiver conectado. A mensagem de boas-vindas no chat têm algumas instruções para o uso."
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:88
-msgid "More information about using Jamulus can be found in the [Software Manual](/wiki/Software-Manual)."
-msgstr ""
+msgid "More information about using Jamulus can be found in the [User Manual](/wiki/Software-Manual)."
+msgstr "Mais informações para aprender a como usar Jamulus podem ser encontradas no [Manual do Usuário] (/wiki/Software-Manual)."
 
 #. type: Title ##
 #: ../wiki/en/Getting-Started.md:89
@@ -272,4 +273,4 @@ msgstr "Solução de problemas"
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:91
 msgid "Having audio trouble? Can't see Servers, or some other issue? Have a look at the [Troubleshooting page](/wiki/Client-Troubleshooting), or feel free to ask in the [Discussions](https://github.com/jamulussoftware/jamulus/discussions)."
-msgstr ""
+msgstr "Tendo dificuldades com o áudio? Não consegue ver Servidores, ou outros problemas? Dê uma olhada na [Página de solução de problemas], ou se sinta livre para perguntar em [Discussões] (https://github.com/jamulussoftware/jamulus/discussions)."

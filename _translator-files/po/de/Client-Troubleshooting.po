@@ -1,21 +1,21 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# Ettore Atalan <atalanttore@googlemail.com>, 2023.
-# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2023, 2024.
-# ann0see <20726856+ann0see@users.noreply.github.com>, 2023.
+# Ettore Atalan <atalanttore@googlemail.com>, 2023, 2026.
+# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2023, 2024, 2026.
+# ann0see <20726856+ann0see@users.noreply.github.com>, 2023, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-06-13 18:09+0000\n"
-"Last-Translator: ignotus <ignotus666@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-02-03 21:51+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Yaml Front Matter Hash Value: lang
 #: ../wiki/en/Client-Troubleshooting.md:1
@@ -67,7 +67,7 @@ msgstr "<summary>Inhaltsverzeichnis</summary>\n"
 
 #. type: Plain text
 #: ../wiki/en/Client-Troubleshooting.md:17
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "* TOC\n"
 " {:toc}\n"
@@ -174,7 +174,9 @@ msgstr "Wie genau du vermeidest, dass du dein direktes Signal hörst, hängt von
 
 #. type: Plain text
 #: ../wiki/en/Client-Troubleshooting.md:50
-msgid "Be aware that while listening to the Server's signal will ensure you will be in sync with other musicians, you may also experience problems if your overall latency (indicated by the \"Delay\" light in Jamulus) is not green or at least yellow most of the time. Consult the [software manual](/wiki/Software-Manual) to understand how to adjust your setup to help with this."
+#, fuzzy
+#| msgid "Be aware that while listening to the Server's signal will ensure you will be in sync with other musicians, you may also experience problems if your overall latency (indicated by the \"Delay\" light in Jamulus) is not green or at least yellow most of the time. Consult the [software manual](/wiki/Software-Manual) to understand how to adjust your setup to help with this."
+msgid "Be aware that while listening to the Server's signal will ensure you will be in sync with other musicians, you may also experience problems if your overall latency (indicated by the \"Delay\" light in Jamulus) is not green or at least yellow most of the time. Consult the [User Manual](/wiki/Software-Manual) to understand how to adjust your setup to help with this."
 msgstr "Beachte dass das Abhören des Serversignals zwar sicherstellt, dass du mit den anderen Musikern synchron bist, dass es aber auch zu Problemen kommen kann, wenn die Gesamtlatenz (angezeigt durch die „Verzögerung“-Lampe in Jamulus) die meiste Zeit über nicht grün oder zumindest gelb ist. Lies das [Software-Handbuch](/wiki/Software-Manual), um zu erfahren, wie du dein Setup in diesem Fall anpassen kannst."
 
 #. type: Title ###
@@ -342,7 +344,9 @@ msgstr ""
 
 #. type: Plain text
 #: ../wiki/en/Client-Troubleshooting.md:108
-msgid "For anything else, please search or post on the [Discussion Forums](https://github.com/jamulussoftware/jamulus/discussions)"
+#, fuzzy
+#| msgid "For anything else, please search or post on the [Discussion Forums](https://github.com/jamulussoftware/jamulus/discussions)"
+msgid "For anything else, please search or post on the [Discussion Forums](https://github.com/orgs/jamulussoftware/discussions)"
 msgstr "Für alles andere suche bitte im [Forum](https://github.com/jamulussoftware/jamulus/discussions) oder poste dort deine Frage"
 
 #, no-wrap

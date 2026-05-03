@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script updates/creates .po files for every language
-# po4a >= 0.63 is required, see https://github.com/mquinson/po4a/releases
+# po4a >= 0.68 is required, see https://github.com/mquinson/po4a/releases
 # You can set the following variables:
 # SRC_DIR: directory for the original documents in English. Files in sub-directories within SRC_DIR are also detected.
 # PO_DIR: directory where the .po files are stored
@@ -60,16 +60,17 @@ while IFS= read -r -d '' doc ; do
             echo creating "$po_file"
         fi
 
-        # Determine file format to be used
+        # Determine file format to be used and set options (configured as an array to allow adding an arbitrary number of them)
+        OPTION=()
         if [ $ext == yml ] ; then
             FILE_FORMAT=yaml
-            OPTION="skip_array"
+            OPTION=("skip_array")
         elif [[ $ext == html || "$filename" == *'-index' ]] ; then # '-index.md' has a markdown extension but is actually html and should be processed as such by po4a
             FILE_FORMAT=xml
-            OPTION="ontagerror=warn"
+            OPTION=("ontagerror=warn" "attributes=<img>src <img>alt")
         elif [ $ext == md ] ; then
             FILE_FORMAT=text
-            OPTION="markdown"
+            OPTION=("markdown")
         fi
 
         # Update/create .po files
@@ -80,7 +81,7 @@ while IFS= read -r -d '' doc ; do
             --msgmerge-opt  --no-wrap \
             --wrap-po newlines \
             --no-deprecation \
-            --option "$OPTION" \
+            "${OPTION[@]/#/--option=}" \
             --po "$po_file" ; then
         echo ''
         echo Error updating "$lang" PO file for: "$filename".$ext

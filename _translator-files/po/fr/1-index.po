@@ -2,22 +2,22 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Olivier Humbert <please@seeGitHubOrWeblate.local>, 2022.
-# Olivier Humbert <trebmuh@tuxfamily.org>, 2023, 2024.
+# Olivier Humbert <trebmuh@librazik.org>, 2023, 2024, 2025, 2026.
 # cosas <f0rhum@free.fr>, 2023.
-# Julien Taverna <jujudusud@gmail.com>, 2023.
+# Julien Taverna <jujudusud@gmail.com>, 2023, 2026.
 # ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-08-04 19:09+0000\n"
-"Last-Translator: Olivier Humbert <trebmuh@tuxfamily.org>\n"
+"PO-Revision-Date: 2026-02-03 21:49+0000\n"
+"Last-Translator: Julien Taverna <jujudusud@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/jamulus/1-index/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Content of: outside any tag (error?)
 #: ../wiki/en/misc/1-index.md:1
@@ -70,6 +70,16 @@ msgstr "Qu'est-ce que Jamulus ?"
 #, no-wrap
 msgid "Jamulus lets you play, rehearse, or jam with your friends, your band, or anyone you find online. Play together remotely in time with high quality, low-latency sound on a normal broadband connection. [Download it here!](wiki/Getting-Started)\n"
 msgstr "Jamulus vous permet de jouer, de répéter ou de bœuffer avec vos amis, votre groupe, ou toute personne en ligne. Jouez ensemble à distance en temps réel avec un son de haute qualité et à faible latence sur une connexion haut débit normale. [Téléchargez-le ici !](wiki/Getting-Started)\n"
+
+#. type: Attribute 'src' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "{% include img/en-screenshots/main-screen-medium.inc %}"
+msgstr "{% include img/en-screenshots/main-screen-medium.inc %}"
+
+#. type: Attribute 'alt' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "A screenshot of the main mixer window showing five people from different countries connected."
+msgstr "Une capture d'écran de la fenêtre principale du mixeur montrant cinq personnes connectées de différents pays."
 
 #. type: Content of: <div><div><figure><figcaption>
 #: ../wiki/en/misc/1-index.md:34
@@ -127,7 +137,7 @@ msgstr "Consultez nos [directives de contribution](wiki/Contribution) pour savoi
 #: ../wiki/en/misc/1-index.md:60
 #, no-wrap
 msgid "_For detailed information on how Jamulus works, see [this paper by Volker Fischer (PDF)](/PerformingBandRehearsalsontheInternetWithJamulus.pdf)._\n"
-msgstr "Pour des informations détaillées sur le fonctionnement de Jamulus, voir [cet article de Volker Fischer (PDF)](/PerformingBandRehearsalsontheInternetWithJamulus.pdf).\n"
+msgstr "_Pour des informations détaillées sur le fonctionnement de Jamulus, voir [cet article de Volker Fischer (PDF - en anglais)](/PerformingBandRehearsalsontheInternetWithJamulus.pdf)._\n"
 
 #. type: Content of: <div><div><a>
 #: ../wiki/en/misc/1-index.md:65

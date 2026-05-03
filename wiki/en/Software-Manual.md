@@ -1,10 +1,10 @@
 ---
 layout: wiki
-title: "Software Manual"
+title: "User Manual"
 lang: "en"
 permalink: "/wiki/Software-Manual"
 ---
-# Jamulus User Manual
+# User Manual
  {:.no_toc}
 
 This manual documents the Jamulus Client application for use by musicians and singers using the software to connect to a server.
@@ -16,7 +16,7 @@ This manual documents the Jamulus Client application for use by musicians and si
 * TOC
  {:toc}
 
-</details> 
+</details>
 
 # Main Window
 
@@ -28,7 +28,7 @@ This manual documents the Jamulus Client application for use by musicians and si
 
 ## Ping, Delay and Jitter
 
-**Ping** shows your network latency in milliseconds, the lower the better. Ping time contributes to overall delay (see below). The most probable cause of a high ping is that your distance to the server is too large.   
+**Ping** shows your network latency in milliseconds, the lower the better. Ping time contributes to overall delay (see below). The most probable cause of a high ping is that your distance to the server is too large.
 
 **Delay** shows overall latency calculated from the current ping time and the delay introduced by the current audio buffer settings. The LEDs show the status of this as:
 
@@ -71,7 +71,7 @@ to the right and move the fader upwards until the desired reverb level is reache
 
 Opens the chat window. Text entered is sent to
 all connected Clients. If a new chat message arrives and the Chat dialogue is not already open, it will
-open automatically for all Clients. See Settings to optionally turn on a sound alert when a new chat message is received. 
+open automatically for all Clients. See Settings to optionally turn on a sound alert when a new chat message arrives.
 
 ## Connect/disconnect button
 
@@ -81,7 +81,7 @@ You can also open the dialogue using "File&gt;Connection Setup...". This will le
 
 <figure><img src="{% include img/en-screenshots/connection-setup-window.inc %}" style="border: 5px solid grey;" loading="lazy" alt="Screenshot of the server connection window"></figure>
 
-The Connection Setup window shows a list of available Servers together with their "distance" (in terms of ping time), the number of occupants and the maximum number supported, and the Server's given location.
+The Connection Setup window shows a list of available Servers together with their "distance" (in terms of ping time), the number of occupants and the maximum number supported, the Server's given location and the Server's Version.
 Permanent Servers (those that have been listed for longer than 24 hours) are shown in bold.
 
 Click on the Server you want to join and press the Connect button to connect to it. Alternatively, double-click on the server name.
@@ -90,7 +90,7 @@ Server operators register their servers with Directories. These are either genre
 You can filter the list by server name or location. To list only occupied Servers, enter a "#" character.
 If you choose "Show All Musicians" the current occupants will be shown.
 
-If you know the IP address or URL of a private Server, you can connect to it using the Server Name/Address field.
+If you know the hostname or IP address of a private Server, you can connect to it using the "Server Address" field.
 An optional port number can be added after the address using a colon as a separator, e.g, `jamulus.example.com:22124`.
 (Note that IPv6 addresses must be entirely enclosed in square brackets, for example `[::1]:22124`.)
 The field will also show a list of the most recently used server addresses.
@@ -109,7 +109,12 @@ If you have set your Audio Channel to Stereo or Stereo Out in your Settings, you
 
 If you see a "mute" icon above a user, it means that person cannot hear you. Either they have muted you, soloed one or more users not including you, or have set your fader in their mix to zero.
 
-Users usually appear left-to-right in the order that they connect. You can sort instead by name, instrument, group, or city using the View menu.
+Users usually appear left-to-right in the order that they connect. When joining a server that already has participants, the default order depends on the versions of Jamulus at the client and the server.
+With a client version before 3.12.0 or a server version older than 3.5.5, the existing participants will be shown before your own fader channel.
+With a client of 3.12.0 or later connected to a server of 3.5.5 or newer, your own fader will be shown first, with the other existing participants shown to the right.
+In either case, participants joining subsequently will by default appear to the right of all the existing participants.
+
+You can override this order and sort instead by name, instrument, group, city or channel number using the View menu. See Menu Commands below.
 
 If the server operator has enabled recording, you will see a message above the mixer showing that you are being recorded.
 
@@ -119,13 +124,70 @@ You can group users together using the "group" toggle. Moving the fader of any m
 
 ### Mute button
 
-Prevents users being heard in your local mix. Be aware that when you mute someone, they will see a "muted" icon above your fader to indicate that you cannot hear them. Note also that you will continue to see their VU meters moving if sound from the muted user is reaching the server. Your fader position for them is also unaffected. 
+Prevents users being heard in your local mix. Be aware that when you mute someone, they will see a "muted" icon above your fader to indicate that you cannot hear them. Note also that you will continue to see their VU meters moving if sound from the muted user is reaching the server. Your fader position for them is also unaffected.
 
 Note that muting your **own** channel only means you will not hear your signal from the server (and is not advised as it can lead to you becoming out of time with other players). This is therefore not the same as using "[Mute Myself](#mute-myself-button)".
 
 ### Solo button
 
 Allows you to hear one or more users on their own. Those not soloed will be muted. Note also that those people who are not soloed will see a "muted" icon above your fader.
+
+## Menu commands
+
+### File > Connection Setup...
+
+Opens the [connection dialogue (see above)](#connectdisconnect-button).
+
+### File > Load/Save Mixer Channels Setup
+
+You can save and restore the mix you have for your band. This stores your settings for each person's fader volume, pan setting, mute and solo state. You can load this mix any time (even while you are playing). Loading can also be done by drag/drop to the mixer window.
+
+### File > Exit
+
+Closes all the windows and exits the application.
+
+### Edit > Clear All Stored Solo/Mute Settings
+
+Whenever you Solo or Mute a channel, Jamulus remembers these settings. Even if that person leaves and rejoins - or you join a server where they are playing - the settings will automatically be applied.  Use this command to clear _all_ these stored settings.
+
+### Edit > Set All Faders to New Client Level
+
+Applies the [configured "New Client Level"](#new-client-level) to all currently connected channels.
+
+### Edit > Auto-Adjust All Faders
+
+Applies a one-off fader adjustment to each channel depending on its volume. Useful for large ensembles to get a reasonable overall mix, although individual adjustments might still be necessary. Best applied during a warm-up or a uniform part of the music piece.
+
+### View > (sort options)
+
+Most items under the "View" menu allow you to adjust the order Jamulus chooses to display channels on the server:
+* Own Fader First<br/>
+This option can be used in addition to the others to move your own channel to always be the leftmost, irrespective of the sort order of the other channels.
+
+* No user sorting<br/>
+This does not take any user details into account when sorting.  It sorts by the order channels join the current server as described further up, with new channels being added to the right-hand end.
+* Sort by Name<br/>
+Sorts by the name someone has chosen in their profile.
+* Sort by Instrument / City<br/>
+Sorts by the instrument or city someone has in their profile, along with their name.
+* Sort by Group<br/>
+Where the fader group feature is in use, this sorts in ascending group number from left to right (and within that, by name), with any ungrouped channels off to the right.
+* Sort by Channel<br/>
+Where Jamulus channel controls (fader, mute, solo, etc) are being controlled by MIDI (see [MIDI control](#midi-control)), this sorts by the channel number to help ensure a stable sort order that aligns with MIDI hardware controls.
+Note that in Jamulus clients before version 3.12.0, channel numbers are assigned directly by the server. Clients from 3.12.0 onwards manage their own channel number assignments and always assign channel 0 to the local user (provided the server version is at least 3.5.5).
+
+### View > Chat
+
+Opens the [Chat](#chat) window.
+
+### Settings Menu
+
+Allows direct access to each of the [Settings](#settings) tabs.
+
+### Help
+
+Provides access to the [Getting Started](Getting-Started) and [User Manual](Software-Manual) (this page) on the website, along with copyright, licence and acknowledgement details.  There is also a "What's This?" option for getting more details on parts of the client display.
+
 
 # Settings
 
@@ -146,7 +208,7 @@ This applies a skin to the main window, some of which are designed to accommodat
 
 ### Meter style
 
-This changes the visual style of the audio meters, independently of the chosen skin. 
+This changes the visual style of the audio meters, independently of the chosen skin.
 
 ### Mixer rows
 
@@ -175,7 +237,7 @@ a different actual sound card channel can be selected.
 
 ### Audio channels
 
-Selects the number of audio channels to be used for communication between Client and server. 
+Selects the number of audio channels to be used for communication between Client and Server.
 
 **Note**: It is better to run separate Client instances per voice/instrument, where each Client has its own ini file, rather than using this built-in mono pair to stereo mixer.
 
@@ -251,7 +313,7 @@ rate is not higher than your available internet upload speed (check this with a 
 ### Custom Directories
 
 If you need to add Directory addresses other than the built-in ones, you can do so here.
-If you know the IP address or host name of a custom Directory, you can connect to it using the Server Name/Address field.
+Enter the hostname or IP address of the custom Directory.
 An optional port number can be added after the address using a colon as a separator, e.g, `jamulus.example.com:22124`.
 (Note that IPv6 is not currently supported for Directories.)
 The button that follows the field allows the current entry to be removed from the list.
@@ -268,7 +330,7 @@ Increases the gain from your device. Use this if your device delivers a gain tha
 
 ### Feedback Protection
 
-Attempts to detect audio feedback loops or loud noise in the first three seconds after you connected to a server. Once detected, this feature will show a message and activate the "Mute Myself" button to mute you in your own mix. 
+Attempts to detect audio feedback loops or loud noise in the first three seconds after you connected to a server. Once detected, this feature will show a message and activate the "Mute Myself" button to mute you in your own mix.
 
 ### Input Balance
 
@@ -276,22 +338,41 @@ Controls the relative levels of the left and right local audio channels. For a m
 it acts as a pan between the two channels. For example, if a microphone is connected to the right input channel and
 an instrument is connected to the left input channel which is much louder than the microphone, move the audio fader to increase the relative volume of the mic.
 
-# Menu commands
+## MIDI Control
 
-### File > Load/Save Mixer Channels Setup
- 
-You can save and restore the mix you have for your band rehearsals (fader, mute, pan, solo etc.) and load these any time (even while you are playing). Loading can also be done by drag/drop to the mixer window.
+<figure><img src="{% include img/en-screenshots/settings-midi.inc %}" style="border: 5px solid grey;" loading="lazy" alt="Image of MIDI control window"></figure>
 
-### Edit > Auto-Adjust All Faders 
+The volume fader, pan control and mute and solo buttons in the Client's mixer window strips can be controlled using a connected MIDI controller. This feature is available from version 3.7.0 on macOS, Linux, and the JACK version of Jamulus for Windows. From Jamulus 3.12.0 onwards, it is also available for the non-JACK (ASIO) Windows version. To enable this feature and open a MIDI-in port, activate the "MIDI-in" checkbox.
 
-Applies a one-off fader setting to each channel depending on its volume. Useful for large ensembles to get a reasonable overall mix, although individual adjustments might still be necessary. Best applied during a warm-up or a uniform part of the music piece.
+### MIDI Device
+
+With MIDI-in enabled, Jamulus will detect the MIDI devices available for connection and list them in the 'MIDI Device' dropdown menu. Select the device you wish to connect to Jamulus. The non-JACK Windows version of Jamulus will automatically connect to all available MIDI devices if none have been selected previously or a saved device is not present. To connect to a single device, select it from the dropdown.
+
+### MIDI parameters
+
+There is one global MIDI channel parameter (0-16) and two parameters you can set for each item controlled: First MIDI CC and consecutive CC numbers (count). First set the channel you want Jamulus to listen on (0 for all channels). Then, for each item you want to control (volume fader, pan, solo, mute), set the first MIDI CC (CC number to start from) and number of consecutive CC numbers (count) you wish to assign to that particular item. You can either type in the MIDI CC values or use the "Learn" button: click on "Learn", actuate the fader/knob/button on your MIDI controller, and the MIDI CC number will be detected and saved.
+
+As an example, a 'First MIDI CC' of 0 and a 'Count' of 8 for volume faders will mean that CC numbers 0 - 7 will control the volume faders for up to 8 mixer channels.
+
+There is one exception that does not require establishing consecutive CC numbers which is the “Mute Myself” parameter - it only requires a single CC number as it is only applied to one’s own audio stream.
+
+### Pick-up Mode
+
+When enabled, fader and pan controls will wait for your physical controller to match their value before moving. This prevents sudden jumps when they are out of sync.
+
+
+*Note*: Jamulus does not provide feedback on the on/off state of buttons, meaning that your controller must keep track and toggle LEDs (if any) to 'on' or 'off' itself, that is, buttons on your MIDI controller need to be set to "toggle" mode. This means that when pressed to 'turn on' a control, it must send a MIDI CC number with a value >=64, and to 'turn off' the control it must send the same CC number with a value <64. You can read your controller's manual to find out how to set this.
+
+When MIDI is enabled, Jamulus will prepend a channel number to each Client name, which can be used to control the channel using MIDI CC numbers. In Jamulus version 3.12.0 onwards, when connected to a server of at least version 3.5.5, your own fader will always be given channel 0, and so will appear first when sorted by channel or when "Own Fader First" is enabled.
+
+*Tip*: With default settings, when some users leave and others join, their left-right arrangement in the GUI may cease to follow a numerical order, making it more difficult to know who each physical fader/knob on your MIDI controller corresponds to. To keep the fader strips following a numerical order, go to "View" on the top menu bar and switch to "Sort by Channel" (or type `Ctrl+E`).
 
 # Backing up Jamulus
 
 {% include_relative Include-Backing-Up.md %}
 * You can save and load different mixer settings using [Load/Save Mixer Channels Setup](Software-Manual#file--loadsave-mixer-channels-setup) and store those files wherever you want.
 
-**Note for macOS users:** As of Jamulus 3.8.1, we have a signed installer. This will store the settings in 
+**Note for macOS users:** As of Jamulus 3.8.1, we have a signed installer. This will store the settings in
 ```shell
 $HOME/Library/Containers/app.jamulussoftware.Jamulus/Data/.config/Jamulus/
 ```

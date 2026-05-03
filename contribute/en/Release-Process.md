@@ -204,6 +204,26 @@ Close the shell or change out of the upstream directory to one's usual working d
 $ cd ../jamulus
 ```
 
+### Updating the Changelog
+
+Change to the above directory `jamulus-upstream`, checkout `main` and ensure it is up to date:
+
+```
+$ cd jamulus-upstream
+$ git checkout main
+$ git pull
+$ git status
+```
+
+Make sure there are no pending changes shown by `git status`.
+
+Make sure `ChangeLog` contains the right version for the planned release - this is "the release version number will be" number.  If not, update it and commit the change.
+
+- Run `./tools/changelog-helper.sh add-missing-entries` to scan Git history and Github milestone for PRs and to auto-add them to the changelog.
+- Run `./tools/changelog-helper.sh group-entries` to group all entries for the current release
+- Verify manually (`git diff`) & edit as necessary
+- Commit & push
+
 ## Upload binaries to SourceForge
 
 **NOTE**: As of Sept 2023 we have a webhook set to transfer the downloads automatically to SourceForge on GitHub release. Check to see whether that's worked before following the steps below! 
@@ -226,15 +246,22 @@ Upload all the files. Then in the SourceForge web UI, for each of the files uplo
 
 ## Website: check links
 
-We have used [linkcheck](https://github.com/filiph/linkcheck) in the past.
+We have used [linkcheck](https://github.com/filiph/linkcheck) in the past
+to check the links on the local website.
+This is now available as a Docker image, so you can run it without installing it directly.
 
+Run the following commands from a terminal:
 ```
 $ git clone https://github.com/jamulussoftware/jamuluswebsite.git
 $ cd jamuluswebsite
 $ git checkout next-release
 $ _po4a-tools/po4a-create-all-targets.sh
 $ bundle exec jekyll serve
-$ linkcheck --no-warnings http://localhost:4000 > linkcheck.log
+```
+Note the IP (or use localhost) and port number `jekyll` is using.
+Then, in another terminal, run the following, replacing `<host>` and `<port>` with the appropriate values:
+```
+$ docker run --network host --rm tennox/linkcheck http://<host>:<port>/ > linkcheck.log
 ```
 
 ## Release checklist (for a full release)
@@ -249,13 +276,17 @@ Approximate release date: <!-- E.g. one week after targeted translation completi
 Current state: <!-- Planning|Translations (beta)|Code freeze (rc)|Released -->
 
 **Checklist**
-- [ ] Assign this issue to the release shepherd who is in charge of managing this checklist.
+- [ ] Agree the set of changes to be included in the release - the issue or PR project should be set to "Tracking" and the milestone should be set to the release.
+- [ ] Make sure `ChangeLog` has the agreed next release version number.
+- [ ] Ensure the [Project Tracking Board](https://github.com/orgs/jamulussoftware/projects/5/views/5) shows the issues and any pull requests for the release as they arise.
+- [ ] As the release nears completion, assign this issue to the release shepherd who is in charge of managing this checklist.
 - [ ] Pin this issue
-- [ ] Ensure that all issues/PR targeted for this release are done by checking the Project board with [the appropriate filter for this release](https://github.com/orgs/jamulussoftware/projects/5/views/5). Remind main developers to review entries in *Waiting on team* state.
+- [ ] Remind main developers to watch the Project board and review entries in *Waiting on team* state.
 - [ ] Agree to de-tag unfinished Issues/PRs.
+- [ ] Ensure the [Project Tracking Board](https://github.com/orgs/jamulussoftware/projects/5/views/5) shows the issues and any pull requests for the release in the correct status and remind the main developers to check the board.
 - [ ] Declare a freeze for code and website by updating this Issue and adding a comment. PRs can still be worked on and may get reviewed, but must not be merged unless agreed explicitly.
 - [ ] Check the `needs documentation` label for any outstanding PRs flagged for this release and remove that label if done.
-- [ ] Check ./Jamulus -h output against the [Include-Client](https://github.com/jamulussoftware/jamuluswebsite/blob/next-release/wiki/en/Include-Client-Commands.md)/[Server-Commands](https://github.com/jamulussoftware/jamuluswebsite/blob/next-release/wiki/en/Include-Server-Commands.md).md pages and [man page (distributions/Jamulus.1)[(https://github.com/jamulussoftware/jamulus/blob/main/distributions/Jamulus.1). Update if necessary.
+- [ ] Check ./Jamulus -h output against the [Include-Client](https://github.com/jamulussoftware/jamuluswebsite/blob/next-release/wiki/en/Include-Client-Commands.md)/[Server-Commands](https://github.com/jamulussoftware/jamuluswebsite/blob/next-release/wiki/en/Include-Server-Commands.md).md pages and [man page (distributions/Jamulus.1)](https://github.com/jamulussoftware/jamulus/blob/main/distributions/Jamulus.1). Update if necessary.
 - [ ] Start Website translations
   - [ ] [Check for broken links](https://github.com/jamulussoftware/jamuluswebsite/blob/release/contribute/en/Release-Process.md#website-check-links)
   - [ ] Open a Pull Request from `next-release` to release, set it as "Draft", sanity check for conflicts and any obvious problems.
@@ -269,7 +300,7 @@ Current state: <!-- Planning|Translations (beta)|Code freeze (rc)|Released -->
   - [ ] Create a translation issue for each language with `tools/create-translation-issues.sh` using `app` argument.
 - [ ] [Update the Changelog](https://jamulus.io/contribute/Release-Process#updating-the-changelog)
 - [ ] [Tag a beta release](https://jamulus.io/contribute/Release-Process#steps-for-a-specific-release)
-  - [ ] Inform emlynmac for signing on macOS, and upload signed binary from [his repo](https://github.com/emlynmac/jamulus/releases/) to [ours](https://github.com/jamulussoftware/jamulus/releases/)
+  - [ ] Push the tag to the [ann0see/jamulussign](https://github.com/ann0see/jamulussign/) repository for signing on macOS, and upload signed binary from [the signing repo](https://github.com/ann0see/jamulussign/releases) to [the official one](https://github.com/jamulussoftware/jamulus/releases/)
   - [ ] Announce the beta release on Github Discussions. Pin the thread.
   - [ ] Get feedback on the stability and resource usage (memleaks?, crashes?, installation issues?) of the beta release
 - [ ] Finish App translations
@@ -279,17 +310,22 @@ Current state: <!-- Planning|Translations (beta)|Code freeze (rc)|Released -->
 - [ ] Finish Website translations
   - [ ] Wait for all PRs to be merged (missing translations will revert to English automatically)
   - [ ] [Check for broken links](https://github.com/jamulussoftware/jamuluswebsite/blob/release/contribute/en/Release-Process.md#website-check-links)
-- [ ] Check the milestone for mergable stuff again
+- [ ] Ensure the [Project Tracking Board](https://github.com/orgs/jamulussoftware/projects/5/views/5) shows the issues and any pull requests for the release in the correct status and remind the main developers to check the board, particularly that everything that is ready for merging has been merged.
 - [ ] [Update the Changelog](https://jamulus.io/contribute/Release-Process#updating-the-changelog)
-- [ ] [Tag a release candidate](https://jamulus.io/contribute/Release-Process#steps-for-a-specific-release) (inform emlynmac for signing on macOS and upload signed binary from his repo to ours).
+- [ ] [Tag a release candidate](https://jamulus.io/contribute/Release-Process#steps-for-a-specific-release) (push the tag to [ann0see/jamulussign](https://github.com/ann0see/jamulussign/) for signing on macOS and upload signed binary to the official one).
   - [ ] Announce the release candidate on Github Discussions. Pin the thread. Unpin and lock the beta thread.
   - [ ] Draft an announcement, include all contributors via `tools/get_release_contributors.py`
-- [ ] [Update the version number in `Jamulus.pro` and add the release date to the Changelog header and commit](https://jamulus.io/contribute/Release-Process#steps-for-a-specific-release)
 - [ ] [Update the Changelog](https://jamulus.io/contribute/Release-Process#updating-the-changelog)
-- [ ] Tag this commit as `r3_y_z`
-  - [ ] Wait for the build to complete
-  - [ ] Contact emlynmac for signing on macOS and upload signed binary [from his](https://github.com/emlynmac/jamulus/releases/) repo [to ours](https://github.com/jamulussoftware/jamulus/releases).
+- [ ] [Tag the release version](https://jamulus.io/contribute/Release-Process#steps-for-a-specific-release):
+  - [ ] Update the version number in `Jamulus.pro` and add the release date to the Changelog header and commit.
+  - [ ] Wait for the release build to complete.
+  - [ ] Push the release to [ann0see/jamulussign](https://github.com/ann0see/jamulussign/) for macOS signing and upload signed binary [from the signing repo](https://github.com/ann0see/jamulussign/releases) repo [to the official one](https://github.com/jamulussoftware/jamulus/releases).
   - [ ] Do a smoke test for Windows/Mac/Linux -- Do the binaries start/connect properly? Can earlier Jamulus versions properly connect to a server based on the new release?
+  - [ ] Do a smoke test of the upgrade notification (do this _very quickly_)
+    - [ ] Install the release build on _one_ of the update notification Servers
+    - [ ] Run the _previous release_ (not an intermediate) build of GUI Client and Server
+    - [ ] Check the update notice is displayed correctly
+    - [ ] Revert the update notification Server to the previous release
   - [ ] [Force tag that tag as `latest` and push.](https://jamulus.io/contribute/Release-Process#if-this-is-a-proper-release-move-the-latest-tag)
   - [ ] [Upload the artifacts to SourceForge and set defaults](https://jamulus.io/contribute/Release-Process#upload-binaries-to-sourceforge).
   - [ ] Update download links on the website by editing `_config.yml` in `next-release`
@@ -300,10 +336,11 @@ Current state: <!-- Planning|Translations (beta)|Code freeze (rc)|Released -->
     - [ ] On Github Discussions in the Announcements section. Lock the announcement thread. Pin the thread. Unpin and lock release candidate thread.
     - [ ] On Facebook in the group "Jamulus (official group)". Turn off replies.
 - [ ] Trigger the update notification by updating both Update Check Servers with the new version (@pljones for update02, email corrados for update01)
-- [ ] [Prepare `Jamulus.pro` (`dev` suffix) and ChangeLog (add a header) for the [next release](https://jamulus.io/contribute/Release-Process#make-the-main-branch-ready-for-post-release-development)
-- [ ] Check that all Issues and PRs tagged for this release are in Done/Closed state.
-- [ ] Close the release milestone in both jamulus and jamuluswebsite repos
+- [ ] Prepare `Jamulus.pro` (`dev` suffix) and ChangeLog (add a header) for the [next release](https://jamulus.io/contribute/Release-Process#make-the-main-branch-ready-for-post-release-development)
+- [ ] Make sure there are no open issues or PRs on the [Project Tracking Board](https://github.com/orgs/jamulussoftware/projects/5/views/5) for the milestone
 - [ ] Create a milestone for the next minor release in jamulus and jamuluswebsite repos
+- [ ] Change the [Project Tracking Board](https://github.com/orgs/jamulussoftware/projects/5/views/5) to the next release (i.e. change the filter and save the change)
+- [ ] Close the release milestone in both jamulus and jamuluswebsite repos
 - [ ] Update this template in https://jamulus.io/contribute/Release-Process with any improvements if needed.
 - [ ] Unpin and close this issue
 - [ ] Determine if a release retrospective is needed, create on Discussions if required
@@ -355,9 +392,3 @@ This Discussion thread will be locked in order to keep things organized.
 Feedback, questions or suspected bug reports are appreciated nevertheless -- please start a new [Discussion on Github](https://github.com/jamulussoftware/jamulus/discussions/new) for them.
 
 ~~~
-
-### Updating the Changelog
-- Run `./tools/changelog-helper.sh add-missing-entries` to scan Git history and Github milestone for PRs and to auto-add them to the changelog.
-- Run `./tools/changelog-helper.sh group-entries` to group all entries for the current release
-- Verify manually (`git diff`) & edit as necessary
-- Commit & push

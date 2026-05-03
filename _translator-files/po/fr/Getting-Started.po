@@ -3,20 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Julien Taverna <please@seeGitHubOrWeblate.local>, 2022.
 # Olivier Humbert <please@seeGitHubOrWeblate.local>, 2022.
-# Olivier Humbert <trebmuh@tuxfamily.org>, 2022, 2023.
-# Julien Taverna <jujudusud@gmail.com>, 2023.
+# Olivier Humbert <trebmuh@librazik.org>, 2022, 2023, 2024, 2026.
+# Julien Taverna <jujudusud@gmail.com>, 2023, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2023-07-30 20:06+0000\n"
-"Last-Translator: Olivier Humbert <trebmuh@tuxfamily.org>\n"
+"PO-Revision-Date: 2026-02-03 21:57+0000\n"
+"Last-Translator: Olivier Humbert <trebmuh@librazik.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Language: fr_FR\n"
 "X-Source-Language: en_150\n"
 
@@ -258,8 +258,8 @@ msgstr "Notez que vous pouvez utiliser la fonction de tchate à tout moment pour
 
 #. type: Plain text
 #: ../wiki/en/Getting-Started.md:88
-msgid "More information about using Jamulus can be found in the [Software Manual](/wiki/Software-Manual)."
-msgstr "Vous trouverez de plus amples informations sur l'utilisation de Jamulus dans le [manuel du logiciel](/wiki/Software-Manual)."
+msgid "More information about using Jamulus can be found in the [User Manual](/wiki/Software-Manual)."
+msgstr "Vous trouverez de plus amples informations sur l'utilisation de Jamulus dans le [manuel utilisateur](/wiki/Software-Manual)."
 
 #. type: Title ##
 #: ../wiki/en/Getting-Started.md:89

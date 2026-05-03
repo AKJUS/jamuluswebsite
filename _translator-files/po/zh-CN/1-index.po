@@ -4,22 +4,24 @@
 # yangyangdaji <redacted@invalid.local>, 2022.
 # Jason Li <jasonmli@outlook.com>, 2023.
 # "White Night(SZTU)" <127086499+WhiteNight-SZTU@users.noreply.github.com>, 2023.
-# Temparo <temperacket@outlook.com>, 2024.
+# Temparo <temperacket@outlook.com>, 2024, 2026.
 # Colgrave <hanqixu.blogs@simplelogin.co>, 2024.
-# Gary Wang <wzc782970009@gmail.com>, 2024.
-# yangyangdaji <1504305527@qq.com>, 2024.
+# Gary Wang <wzc782970009@gmail.com>, 2024, 2026.
+# yangyangdaji <1504305527@qq.com>, 2024, 2026.
+# "Alioc." <hit.177411245@gmail.com>, 2025, 2026.
+# Deleted User <noreply+78169@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-08-07 00:09+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"PO-Revision-Date: 2026-02-03 21:51+0000\n"
+"Last-Translator: Gary Wang <wzc782970009@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh-CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Content of: outside any tag (error?)
 #: ../wiki/en/misc/1-index.md:1
@@ -72,6 +74,16 @@ msgstr "什么是 Jamulus？"
 #, no-wrap
 msgid "Jamulus lets you play, rehearse, or jam with your friends, your band, or anyone you find online. Play together remotely in time with high quality, low-latency sound on a normal broadband connection. [Download it here!](wiki/Getting-Started)\n"
 msgstr "Jamulus 让您的朋友、乐队或您在网上找到的任何人一起演奏、排练或即兴演奏。用普通宽带连接上提供高品质、低延迟的声音，可以轻松地远程及时地一起播放。 [从这里下载](wiki/Getting-Started)\n"
+
+#. type: Attribute 'src' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "{% include img/en-screenshots/main-screen-medium.inc %}"
+msgstr "{% include img/en-screenshots/main-screen-medium.inc %}"
+
+#. type: Attribute 'alt' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "A screenshot of the main mixer window showing five people from different countries connected."
+msgstr "主混音器窗口的屏幕截图，显示来自不同国家的五个人连接在一起。"
 
 #. type: Content of: <div><div><figure><figcaption>
 #: ../wiki/en/misc/1-index.md:34

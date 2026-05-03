@@ -19,7 +19,7 @@ permalink: "/wiki/Running-a-Server"
 
 ## Do I need to run a Server?
 
-**No**. You don't need to run a Server. You can use the Servers listed by the built-in Directories and use Jamulus without running a Server yourself. You can also use an unlisted Server if you know its internet address. Or you can use a third party hosting service such as [melomax](https://melomax.live/jamulus-hosting/) or [KOORD](https://koord.live/). There's probably a Server nearby that you and your friends can use at low enough latency for most needs.
+**No**. You don't need to run a Server. You can use the Servers listed by the built-in Directories and use Jamulus without running a Server yourself. You can also use an unlisted Server if you know its internet address. Or you can use a third party hosting service such as [melomax](https://melomax.live/jamulus-hosting/). There's probably a Server nearby that you and your friends can use at low enough latency for most needs.
 
 Using a public Server might introduce you to strangers. If you want an undisturbed session, you can use the soloing technique described on the [Tips and Tricks page](Tips-Tricks-More#have-an-undisturbed-session-on-any-server). You won't hear strangers who connect to the Server, but they can hear you if they wish.
 
@@ -183,6 +183,7 @@ To register with one of the Directories built into the Jamulus Client, replace `
 |**Genre Classical/Folk** |`classical.jamulus.io:22524`|
 |**Genre Choral/Barbershop** |`choral.jamulus.io:22724`|
 
+Recent versions of Jamulus support [DNS SRV records ("service" records)](https://en.wikipedia.org/wiki/SRV_record) for automatically finding the port number to use to connect to a Directory or Server. This allows just the hostname to be specified, without the port number. See [this page](DNS-SRV-Support) for details and applicable version numbers.
 
 ##### `-o or --serverinfo`
 
@@ -226,11 +227,6 @@ Reduces latency if Clients connect with the **Small Network Buffers** option. Re
 
 ##### `-l or --log`
 Enable logging, set path and file name
-
-##### `-m or --htmlstatus`
-Enable HTML status file, set path and file name
-
-**Note:** This feature is deprecated, and may disappear in a future release.
 
 ##### `-P or --delaypan`
 Start with delay panning enabled. This option uses small differences in sound arrival time between the two ears. It produces a stereo effect similar to natural human hearing when compared to normal “volume” panning.

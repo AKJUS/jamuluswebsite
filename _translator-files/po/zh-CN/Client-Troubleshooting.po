@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # yangyangdaji <redacted@invalid.local>, 2022.
 # ignotus <redacted@invalid.local>, 2022.
-# yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
+# yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024, 2026.
 # Allan Nordhøy <epost@anotheragency.no>, 2023.
-# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2024.
+# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2024, 2026.
+# "Alioc." <hit.177411245@gmail.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-08-07 09:09+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"PO-Revision-Date: 2026-02-03 21:51+0000\n"
+"Last-Translator: \"Alioc.\" <hit.177411245@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh-CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Yaml Front Matter Hash Value: lang
 #: ../wiki/en/Client-Troubleshooting.md:1
@@ -171,8 +172,8 @@ msgstr "避免收听直接信号的具体方式取决于您的个人设置 - 您
 
 #. type: Plain text
 #: ../wiki/en/Client-Troubleshooting.md:50
-msgid "Be aware that while listening to the Server's signal will ensure you will be in sync with other musicians, you may also experience problems if your overall latency (indicated by the \"Delay\" light in Jamulus) is not green or at least yellow most of the time. Consult the [software manual](/wiki/Software-Manual) to understand how to adjust your setup to help with this."
-msgstr "请注意，虽然收听服务器的信号将确保您与其他音乐家同步，但如果您的整体延迟(由 Jamulus 中的“延迟”灯指示)不是绿色或至少大部分时间不是黄色，您也可能会遇到问题时间。请参阅 [软件手册](/wiki/Software-Manual) 以了解如何调整您的设置以帮助解决此问题。"
+msgid "Be aware that while listening to the Server's signal will ensure you will be in sync with other musicians, you may also experience problems if your overall latency (indicated by the \"Delay\" light in Jamulus) is not green or at least yellow most of the time. Consult the [User Manual](/wiki/Software-Manual) to understand how to adjust your setup to help with this."
+msgstr "请注意，虽然收听服务器的信号将确保您与其他音乐家同步，但如果您的整体延迟(由 Jamulus 中的“延迟”灯指示)不是绿色或至少大部分时间不是黄色，您也可能会遇到问题时间。请参阅 [用户手册](/wiki/Software-Manual) 以了解如何调整您的设置以帮助解决此问题。"
 
 #. type: Title ###
 #: ../wiki/en/Client-Troubleshooting.md:51
@@ -333,8 +334,8 @@ msgstr ""
 
 #. type: Plain text
 #: ../wiki/en/Client-Troubleshooting.md:108
-msgid "For anything else, please search or post on the [Discussion Forums](https://github.com/jamulussoftware/jamulus/discussions)"
-msgstr "如有其他问题请在 [讨论区](https://github.com/jamulussoftware/jamulus/discussions)搜索或发帖"
+msgid "For anything else, please search or post on the [Discussion Forums](https://github.com/orgs/jamulussoftware/discussions)"
+msgstr "如有其他问题请在 [讨论区](https://github.com/orgs/jamulussoftware/discussions)搜索或发帖"
 
 #, no-wrap
 #~ msgid ""

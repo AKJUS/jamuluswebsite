@@ -4,22 +4,23 @@
 # ignotus <please@seeGitHubOrWeblate.local>, 2022.
 # Gico2006 <gradaellig@protonmail.com>, 2022.
 # Giuseppe <dzpex@libero.it>, 2023.
-# Marco Ciampa <ciampix@posteo.net>, 2023.
-# Emanuele Frasca <noostale@live.it>, 2023.
-# ann0see <20726856+ann0see@users.noreply.github.com>, 2024.
-# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2024.
+# Marco Ciampa <ciampix@posteo.net>, 2023, 2025, 2026.
+# Emanuele Frasca <noostale@live.it>, 2023, 2026.
+# ann0see <20726856+ann0see@users.noreply.github.com>, 2024, 2026.
+# ignotus <ignotus666@users.noreply.hosted.weblate.org>, 2024, 2026.
+# peppedp <avvocatidipaolo@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-08-30 19:14+0000\n"
-"Last-Translator: ann0see <20726856+ann0see@users.noreply.github.com>\n"
+"PO-Revision-Date: 2026-02-03 21:56+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7.1-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Content of: outside any tag (error?)
 #: ../wiki/en/misc/1-index.md:1
@@ -72,6 +73,16 @@ msgstr "Cos'è Jamulus?"
 #, no-wrap
 msgid "Jamulus lets you play, rehearse, or jam with your friends, your band, or anyone you find online. Play together remotely in time with high quality, low-latency sound on a normal broadband connection. [Download it here!](wiki/Getting-Started)\n"
 msgstr "Jamulus ti consente di suonare, provare o suonare con i tuoi amici, la tua band o chiunque trovi online. Suona insieme da remoto a tempo con audio di alta qualità e bassa latenza su una normale connessione a banda larga. [Scaricalo qui!](wiki/Getting-Started)\n"
+
+#. type: Attribute 'src' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "{% include img/en-screenshots/main-screen-medium.inc %}"
+msgstr ""
+
+#. type: Attribute 'alt' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "A screenshot of the main mixer window showing five people from different countries connected."
+msgstr "Una schermata della finestra principale del mixer che mostra cinque persone di differenti paesi connesse."
 
 #. type: Content of: <div><div><figure><figcaption>
 #: ../wiki/en/misc/1-index.md:34

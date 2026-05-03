@@ -22,8 +22,6 @@ Upgrading? You may want to [back up your configuration](Software-Manual#backing-
 1. **Run Jamulus**. Now you should be able to use Jamulus just like any other application.
 1. **Set up your sound card**. When you're done, you need to set up your audio hardware. And if you are using ASIO4ALL, have a look at how to set that up below.
 
-_Please note that you are not permitted to redistribute this binary without acquiring a [licence agreement from Steinberg](https://www.steinberg.net/developers/)._
-
 **Note:** If you don't want to use ASIO or prefer [JACK on Windows](https://jackaudio.org/faq/jack_on_windows.html), you can also use the [JACK version of Jamulus]({{ site.download_root_link }}{{ site.download_file_names.windows-jack }}). You can find old (legacy) versions supporting outdated operating systems on the [GitHub release page](https://github.com/jamulussoftware/jamulus/releases).
 
 ***
@@ -35,11 +33,7 @@ Jamulus can use [ASIO](https://en.wikipedia.org/wiki/Audio_Stream_Input/Output).
 * If you have an external sound card/audio interface, use its official ASIO driver if you can (they usually provide the best quality).
 * If you don't have an external sound card, you will probably not have an ASIO driver so will need to install a generic one like ASIO4ALL:
 
-You can try two versions of ASIO4ALL. ASIO4ALL v2.14 includes a workaround for a bug which might break other functionality.
-
-[ASIO4ALL v2.15 Download](https://github.com/jamulussoftware/assets/raw/main/ASIO4ALL/v2.15/ASIO4ALL_2_15_English.exe){: .button target="_blank" rel="noopener noreferrer"}
-
-[ASIO4ALL v2.14 Download](https://github.com/jamulussoftware/assets/raw/main/ASIO4ALL/v2.14/ASIO4ALL_2_14_English.exe){: .button target="_blank" rel="noopener noreferrer"}
+[ASIO4ALL v2.17 Download](https://asio4all.org/downloads/ASIO4ALL_2_17.exe){: .button target="_blank" rel="noopener noreferrer"}
 
 [ASIO4ALL website](https://www.asio4all.org/){: target="_blank" rel="noopener noreferrer"}
 

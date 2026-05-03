@@ -1,19 +1,20 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# Daniel <daniel@mailsystem.net>, 2024.
+# Daniel <daniel@mailsystem.net>, 2024, 2026.
+# tygyh <jonis9898@hotmail.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-08-05 10:42+0000\n"
-"Last-Translator: Daniel <daniel@mailsystem.net>\n"
+"PO-Revision-Date: 2026-02-03 21:50+0000\n"
+"Last-Translator: tygyh <jonis9898@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sv-SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. type: Content of: outside any tag (error?)
 #: ../wiki/en/misc/1-index.md:1
@@ -66,6 +67,16 @@ msgstr "Vad är Jamulus?"
 #, no-wrap
 msgid "Jamulus lets you play, rehearse, or jam with your friends, your band, or anyone you find online. Play together remotely in time with high quality, low-latency sound on a normal broadband connection. [Download it here!](wiki/Getting-Started)\n"
 msgstr "Jamulus låter dig spela, öva eller jamma med dina vänner, ditt band eller vem som helst du hittar online. Spela tillsammans på distans i takt med högkvalitativt ljud och låg latens via en vanlig bredbandsuppkoppling. [Ladda ner här!](wiki/Getting-Started)\n"
+
+#. type: Attribute 'src' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "{% include img/en-screenshots/main-screen-medium.inc %}"
+msgstr "{% include img/en-screenshots/main-screen-medium.inc %}"
+
+#. type: Attribute 'alt' of: <div><div><figure><a><img>
+#: ../wiki/en/misc/1-index.md:32
+msgid "A screenshot of the main mixer window showing five people from different countries connected."
+msgstr "En skärmdump av huvudmixar-fönstret där fem personer från olika länder är sammankopplade."
 
 #. type: Content of: <div><div><figure><figcaption>
 #: ../wiki/en/misc/1-index.md:34
